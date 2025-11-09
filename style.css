@@ -1,0 +1,124 @@
+/* ===== General Layout ===== */
+body {
+  background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* ===== Glassmorphism Card ===== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  color: #fff;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Buttons ===== */
+.btn-teal {
+  background-color: #00bfa6;
+  color: #fff;
+  border: none;
+  transition: all 0.3s;
+}
+.btn-teal:hover {
+  background-color: #00a58f;
+  transform: scale(1.02);
+}
+.btn-outline-teal {
+  border: 1px solid #00bfa6;
+  color: #00bfa6;
+  transition: all 0.3s;
+}
+.btn-outline-teal:hover {
+  background-color: #00bfa6;
+  color: #fff;
+}
+.text-teal {
+  color: #00bfa6 !important;
+}
+
+/* ===== Form Inputs ===== */
+input.form-control,
+select.form-select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+input.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===== Table Styling ===== */
+.table-dark th,
+.table-dark td {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Dropdown Menu ===== */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #000 !important;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.dropdown-menu.show {
+  display: block;
+}
+.dropdown-menu table {
+  background-color: transparent;
+  color: #000 !important;
+  width: 100%;
+  border-collapse: collapse;
+}
+.dropdown-menu th,
+.dropdown-menu td {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+}
+.dropdown-toggle {
+  background-color: #00bfa6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ===== Dark Mode ===== */
+.dark-mode {
+  background: #16181b !important;
+  color: #eee !important;
+}
+.dark-mode .glass-card {
+  background: rgba(20, 22, 26, 0.88) !important;
+  color: #eee !important;
+}
+.dark-mode .table-dark {
+  background-color: #23272a !important;
+}
+.dark-mode .navbar {
+  background: #23272a !important;
+}
+.dark-mode input,
+.dark-mode select {
+  background-color: #23272a !important;
+  color: #eee !important;
+}
+.glass-bg {
+  background: linear-gradient(135deg, #09121c 0%, #142a3b 100%);
+}

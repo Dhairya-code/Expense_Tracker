@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="glass-bg">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark px-4 shadow">
+    <h3 class="text-teal m-0">Expense Tracker</h3>
+    <div>
+      <span id="userEmail" class="me-3 text-light small"></span>
+      <button class="btn btn-outline-light btn-sm" onclick="logoutUser()">Logout</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container my-4">
+    <div class="glass-card p-4">
+
+      <!-- ========== Add Expense ========== -->
+      <h4 class="mb-3 text-light">➕ Add Expense</h4>
+      <div class="row mb-4">
+        <div class="col-md-3">
+          <input type="text" id="title" class="form-control" placeholder="Title" />
+        </div>
+        <div class="col-md-3">
+          <input type="number" id="amount" class="form-control" placeholder="Amount" />
+        </div>
+        <div class="col-md-3">
+          <input type="date" id="date" class="form-control" />
+        </div>
+        <!-- ===== Glass-themed Category Dropdown ===== -->
+        <div class="select-wrapper col-md-2">
+          <select id="category" class="form-select">
+            <option value="">Select Category</option>
+            <option>Food</option>
+            <option>Transport</option>
+            <option>Shopping</option>
+            <option>Bills</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="col-md-1">
+          <button class="btn btn-teal w-100" id="addBtn">Add</button>
+        </div>
+      </div>
+
+      <!-- ========== Expense List Section ========== -->
+      <h4 class="text-light mb-3">📋 Expense List</h4>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <input type="text" id="searchInput" onkeyup="filterExpenses()" class="form-control w-50" placeholder="Search expenses..." />
+        <div>
+          <button class="btn btn-outline-light btn-sm me-2" onclick="exportCSV()">Export CSV</button>
+          <button id="darkModeToggle" class="btn btn-outline-light btn-sm" onclick="toggleDarkMode()">Dark Mode</button>
+        </div>
+      </div>
+
+      <table class="table table-dark table-hover align-middle">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Total (₹)</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody id="expenseTable"></tbody>
+      </table>
+
+      <h5 class="mt-3 text-end">Total: ₹<span id="totalAmount">0</span></h5>
+
+      <!-- ========== Chart Section ========== -->
+      <h4 class="mt-5 text-light">📊 Category-wise Expense Chart</h4>
+      <div class="mt-3">
+        <canvas id="expenseChart" height="150"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="auth.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
