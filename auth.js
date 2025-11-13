@@ -18,9 +18,15 @@ function registerUser() {
   const name = document.getElementById("regName").value.trim();
   const email = document.getElementById("regEmail").value.trim();
   const password = document.getElementById("regPassword").value.trim();
+  const confirmPassword = document.getElementById("regConfirmPassword").value.trim();
 
-  if (!name || !email || !password) {
+  if (!name || !email || !password || !confirmPassword) {
     alert("Please fill all fields!");
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    alert("Passwords do not match!");
     return;
   }
 
